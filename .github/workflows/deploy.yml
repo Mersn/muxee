@@ -41,19 +41,17 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: 进入dist文件夹
-        run: cd dist
       - name: 复制index重命名为404-解决刷新404的问题
-        run: cp index.html ./404.html
-      - name: 查看当前文件夹
-        run: ls
+        run: cp ./dist/index.html ./dist/404.html
+      - name: 查看dist文件夹
+        run: ls dist
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
           # 上传 dist 文件夹
-          path: './'
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
