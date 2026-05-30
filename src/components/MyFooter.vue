@@ -48,7 +48,7 @@
     <button
       @click="handleBackToTop"
       :class="isShowBackToTopBtn"
-      class="fixed bottom-8 right-8 w-12 h-12 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 z-40"
+      class="gradient-bg fixed bottom-8 right-8 w-12 h-12 rounded-full shadow-lg transition-all duration-300 z-40"
     >
       <svg
         class="w-6 h-6 mx-auto"

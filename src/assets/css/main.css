@@ -136,13 +136,6 @@ p {
     line-height: 1.8;
 }
 
-.text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
 /* ========================================
    4. Layout & Grid System
    ======================================== */
@@ -524,10 +517,14 @@ p {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.gradient-bg {
+    background: var(--gradient-primary);
 }
 
 .hero-gradient {
