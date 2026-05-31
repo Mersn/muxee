@@ -1,33 +1,11 @@
 <template>
   <div class="bg-gray-50">
     <MyHeader />
-    <MyHero title="Our" title-high="Portfolio" content="Explore our collection of innovative projects that showcase our expertise in creating digital excellence." />
-    
-    <!-- Filter Section -->
-    <section class="py-10 bg-white sticky top-16 z-40 shadow-sm">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="filter-btn active px-6 py-2 rounded-full border-2 border-purple-600">
-                    All Projects
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 hover:border-purple-600">
-                    Web Design
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 hover:border-purple-600">
-                    Development
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 hover:border-purple-600">
-                    Mobile Apps
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 hover:border-purple-600">
-                    Branding
-                </button>
-                <button class="filter-btn px-6 py-2 rounded-full border-2 border-gray-300 hover:border-purple-600">
-                    Marketing
-                </button>
-            </div>
-        </div>
-    </section>
+    <MyHero
+      :title="$t('Portfolio.title_pre')"
+      :title-high="$t('Portfolio.title')"
+      :content="$t('Portfolio.title_desc')"
+    />
     
     <!-- Portfolio Grid -->
     <section class="py-20">
@@ -266,13 +244,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:shadow-lg transition">
-                    Load More Projects
-                </button>
             </div>
         </div>
     </section>

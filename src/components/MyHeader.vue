@@ -92,6 +92,8 @@ function switchLanguage() {
   try {
     // 1. 更新 I18n 实例的当前语言
     locale.value = newLocale
+    // 设置html lang
+    document.documentElement.lang = newLocale
     // 2. 持久化到本地存储（下次打开页面仍保持该语言）
     localStorage.setItem("app_language", newLocale)
     console.log(`语言已切换为：${newLocale === "zh" ? "中文" : "英文"}`)
@@ -118,9 +120,9 @@ onMounted(() => {
 // ])
 const menu = computed(() => [
   { label: t("Header.index"), path: "/home" },
-  { label: t("Header.about"), path: "/about" },
   { label: t("Header.services"), path: "/services" },
   { label: t("Header.portfolio"), path: "/portfolio" },
+  { label: t("Header.about"), path: "/about" },
   { label: t("Header.contact"), path: "/contact" },
 ])
 

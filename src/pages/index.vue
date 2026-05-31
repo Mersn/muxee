@@ -188,27 +188,27 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">
-              500+
+              100+
             </div>
-            <p class="text-gray-600">Projects Completed</p>
+            <p class="text-gray-600">{{$t("Home.project")}}</p>
           </div>
           <div>
             <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">
-              200+
+              60+
             </div>
-            <p class="text-gray-600">Happy Clients</p>
+            <p class="text-gray-600">{{$t("Home.client")}}</p>
           </div>
           <div>
             <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">
               20+
             </div>
-            <p class="text-gray-600">Team Members</p>
+            <p class="text-gray-600">{{$t("Home.member")}}</p>
           </div>
           <div>
             <div class="text-4xl lg:text-5xl font-bold gradient-text mb-2">
               10+
             </div>
-            <p class="text-gray-600">Years Experience</p>
+            <p class="text-gray-600">{{$t("Home.years")}}</p>
           </div>
         </div>
       </div>
@@ -219,164 +219,79 @@
       <div class="container mx-auto px-4 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl lg:text-5xl font-bold mb-4 gradient-text">
-            Recent Projects
+            {{$t("Home.project_recent")}}
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Showcasing our latest work and creative solutions
+            {{$t("Home.project_recent_desc")}}
           </p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Portfolio Item 1 -->
           <div
-            class="group relative overflow-hidden rounded-2xl shadow-lg card-hover"
+          v-for="item in projectList" :key="item.label"
+            class="bg-white rounded-lg shadow-lg overflow-hidden card-hover"
           >
-            <img
-              src="@/assets/images/home/projects_1.png?w=500"
-              alt="Project 1"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+            <img 
+              :src="item.url"
+              :alt="item.label"
+              class="w-full h-64 object-cover"
             />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
-            >
-              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 class="text-xl font-bold mb-2">Today Platform</h3>
-                <p class="text-sm">自有产品的借势营销，打造百万级超级活动</p>
-              </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3>
+                <p class="text-gray-600 mb-4">{{ item.desc }}</p>
             </div>
           </div>
+        </div>
 
-          <!-- Portfolio Item 2 -->
+        <div class="text-center mt-12">
+          <RouterLink
+            to="/portfolio"
+            class="inline-block px-8 py-3 btn-outline btn-outline:hover font-semibold rounded-full hover:shadow-lg transition"
+          >
+            {{$t("Home.btn_more")}}
+          </RouterLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="py-20 bg-grey">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold mb-4 gradient-text">
+            {{$t("Home.product")}}
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            {{$t("Home.product_desc")}}
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           <div
+            v-for="item in productList" :key="item.label"
             class="group relative overflow-hidden rounded-2xl shadow-lg card-hover"
           >
             <img
-              src="@/assets/images/home/projects_2.png?w=500"
-              alt="Project 2"
+              :src="item.url"
+              :alt="item.label"
               class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
             >
               <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 class="text-xl font-bold mb-2">ChinYe Platform</h3>
-                <p class="text-sm">精准洞悉战略机遇,抢先占位目标心智</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Portfolio Item 3 -->
-          <div
-            class="group relative overflow-hidden rounded-2xl shadow-lg card-hover"
-          >
-            <img
-              src="@/assets/images/home/projects_3.png?w=500"
-              alt="Project 3"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
-            >
-              <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 class="text-xl font-bold mb-2">XiangGaoJi Platform</h3>
-                <p class="text-sm">
-                  是提供人力服务，更是忠实伙伴，提供管理之“渔”
-                </p>
+                <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3>
+                <p class="text-sm">{{ item.desc }}</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="text-center mt-12">
-          <a
-            href="./portfolio.html"
-            class="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-full hover:shadow-lg transition"
+          <RouterLink
+            to="/portfolio"
+            class="inline-block px-8 py-3 btn-outline btn-outline:hover font-semibold rounded-full hover:shadow-lg transition"
           >
-            View All Projects
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section with Slider -->
-    <section class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl lg:text-5xl font-bold mb-4 gradient-text">
-            Client Testimonials
-          </h2>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            What our clients say about working with us
-          </p>
-        </div>
-
-        <div class="slider-container max-w-4xl mx-auto">
-          <div class="slider-track">
-            <!-- Testimonial 1 -->
-            <div class="min-w-full px-4">
-              <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <div class="mb-6">
-                  <svg
-                    class="w-12 h-12 text-purple-500 mx-auto"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                    />
-                  </svg>
-                </div>
-                <p class="text-lg text-gray-600 mb-6">
-                  "MUXEE transformed our online presence completely. Their
-                  attention to detail and innovative approach exceeded our
-                  expectations."
-                </p>
-                <div class="flex items-center justify-center">
-                  <img
-                    src="https://i.pravatar.cc/100?img=1"
-                    alt="Client"
-                    class="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div class="text-left">
-                    <p class="font-semibold">John Smith</p>
-                    <p class="text-sm text-gray-500">CEO, TechCorp</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="min-w-full px-4">
-              <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
-                <div class="mb-6">
-                  <svg
-                    class="w-12 h-12 text-purple-500 mx-auto"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
-                    />
-                  </svg>
-                </div>
-                <p class="text-lg text-gray-600 mb-6">
-                  "Working with MUXEE was a game-changer for our business. They
-                  delivered beyond what we imagined possible."
-                </p>
-                <div class="flex items-center justify-center">
-                  <img
-                    src="https://i.pravatar.cc/100?img=5"
-                    alt="Client"
-                    class="w-12 h-12 rounded-full mr-4"
-                  />
-                  <div class="text-left">
-                    <p class="font-semibold">Sarah Johnson</p>
-                    <p class="text-sm text-gray-500">Founder, StartupX</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            {{$t("Home.btn_more")}}
+          </RouterLink>
         </div>
       </div>
     </section>
@@ -386,6 +301,39 @@
   </div>
 </template>
 <script setup>
+import { computed } from "vue"
 import { useI18n } from "vue-i18n"
+import project_1 from "@/assets/images/home/projects_1.png"
+import project_2 from "@/assets/images/home/projects_2.png"
+import project_3 from "@/assets/images/home/projects_3.png"
+import product_1 from "@/assets/images/home/product_1.png"
+import product_2 from "@/assets/images/home/product_2.png"
+import product_3 from "@/assets/images/home/product_3.png"
+import product_4 from "@/assets/images/home/product_4.png"
+import product_5 from "@/assets/images/home/product_5.png"
+import product_6 from "@/assets/images/home/product_6.png"
 const { t } = useI18n()
+// 引入图片
+// const modules = import.meta.glob("../assets/images/home/*", { as: 'url', eager: true})
+// function getImageUrl(name) {
+//   const path =`../assets/images/home/${name}`
+//   return modules[path]
+//   // console.log('--getImageUrl--', import.meta.url)
+//   // let newUrl =  new URL(`../assets/images/home/project_1.png`, import.meta.url)
+//   // console.log('--getImageUrl--', newUrl)
+//   // return newUrl.href
+// }
+const projectList = computed(() => [
+  { label: t("Home.project1"), desc: t("Home.project1_desc"), url: project_1 },
+  { label: t("Home.project2"), desc: t("Home.project2_desc"), url: project_2 },
+  { label: t("Home.project3"), desc: t("Home.project3_desc"), url: project_3 },
+])
+const productList = computed(() => [
+  { label: t("Home.product1"), desc: t("Home.product1_desc"), url: product_1 },
+  { label: t("Home.product2"), desc: t("Home.product2_desc"), url: product_2 },
+  { label: t("Home.product3"), desc: t("Home.product3_desc"), url: product_3 },
+  { label: t("Home.product4"), desc: t("Home.product4_desc"), url: product_4 },
+  { label: t("Home.product5"), desc: t("Home.product5_desc"), url: product_5 },
+  { label: t("Home.product6"), desc: t("Home.product6_desc"), url: product_6 },
+])
 </script>

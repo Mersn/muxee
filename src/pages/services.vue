@@ -1,7 +1,11 @@
 <template>
   <div class="bg-gray-50">
     <MyHeader />
-    <MyHero title="Our" title-high="Services" content="Comprehensive digital solutions tailored to transform your business and drive growth in the digital age." />
+    <MyHero
+      :title="$t('Service.title_pre')"
+      :title-high="$t('Service.title')"
+      :content="$t('Service.title_desc')"
+    />
     
     <!-- Main Services Section -->
     <section class="py-20">

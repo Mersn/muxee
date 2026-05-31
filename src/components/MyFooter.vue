@@ -35,7 +35,7 @@
             <li>{{ $t('Footer.addrDetail') }}</li>
             <li>{{ $t('Footer.addr') }}</li>
             <li>{{ $t('Footer.phone') }}</li>
-            <li>{{ $t('Footer.email') }}</li>
+            <li>{{ $t('Footer.email') }}{{ $t('Contact.title_cell1_desc') }}</li>
           </ul>
         </div>
       </div>
@@ -48,7 +48,7 @@
     <button
       @click="handleBackToTop"
       :class="isShowBackToTopBtn"
-      class="gradient-bg fixed bottom-8 right-8 w-12 h-12 rounded-full shadow-lg transition-all duration-300 z-40"
+      class="gradient-bg animate-glow card-hover fixed bottom-8 right-8 w-12 h-12 rounded-full shadow-lg transition-all duration-300 z-40"
     >
       <svg
         class="w-6 h-6 mx-auto"
@@ -102,9 +102,9 @@ window.addEventListener("scroll", () => {
 })
 
 const menu = computed(() => [
-  { label: t("Header.about"), path: "/about" },
   { label: t("Header.services"), path: "/services" },
   { label: t("Header.portfolio"), path: "/portfolio" },
+  { label: t("Header.about"), path: "/about" },
   { label: t("Header.contact"), path: "/contact" },
 ])
 

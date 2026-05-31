@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
     build: {
       // 关闭 sorcemap 报错不会映射到源码
       sourcemap: false,
+      assetsInlineLimit: 0,
       // 打包大小超出 400kb 提示警告
       chunkSizeWarningLimit: 400,
       rolldownOptions: {
