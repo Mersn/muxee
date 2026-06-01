@@ -34,7 +34,7 @@
           <ul class="space-y-2 text-gray-400">
             <li>{{ $t('Footer.addrDetail') }}</li>
             <li>{{ $t('Footer.addr') }}</li>
-            <li>{{ $t('Footer.phone') }}</li>
+            <li>{{ $t('Footer.phone') }}{{ $t('Contact.title_cell2_desc') }}</li>
             <li>{{ $t('Footer.email') }}{{ $t('Contact.title_cell1_desc') }}</li>
           </ul>
         </div>

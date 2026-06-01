@@ -10,68 +10,36 @@
     <!-- Main Services Section -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <!-- Service 1: Web Development -->
+            <!-- Service 1 -->
             <div class="mb-20">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="animate-slideInLeft">
-                        <div class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">
-                            Development
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">Web Development</h2>
-                        <p class="text-gray-600 mb-6">
-                            We build scalable, high-performance web applications that deliver exceptional user experiences. Our development process focuses on clean code, modern frameworks, and best practices.
-                        </p>
+                        <h2 class="text-4xl font-bold mb-6">{{ $t('Service.service1') }}</h2>
+                        <p class="text-gray-600 mb-6">{{ $t('Service.service1_desc') }}</p>
                         
-                        <div class="space-y-4 mb-8">
+                        <div v-for="item in service1SubList" :key="item.title" class="space-y-4 mb-8">
                             <div class="flex items-start">
                                 <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div>
-                                    <h4 class="font-semibold mb-1">Custom Web Applications</h4>
-                                    <p class="text-gray-600 text-sm">Tailored solutions built from scratch to meet your specific needs</p>
+                                    <h4 class="font-semibold mb-1">{{ item.title }}</h4>
+                                    <p class="text-gray-600 text-sm">{{ item.desc }}</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <div>
-                                    <h4 class="font-semibold mb-1">E-Commerce Solutions</h4>
-                                    <p class="text-gray-600 text-sm">Complete online stores with payment integration and inventory management</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <div>
-                                    <h4 class="font-semibold mb-1">Progressive Web Apps</h4>
-                                    <p class="text-gray-600 text-sm">Fast, reliable, and engaging apps that work on any device</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">React</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">Vue.js</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">Node.js</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">Python</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">MongoDB</span>
-                            <span class="tech-badge px-3 py-1 bg-gray-100 rounded-full text-sm">PostgreSQL</span>
                         </div>
                     </div>
                     
-                    <div class="relative">
+                    <div class="relative animate-slideInRight">
                         <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600" 
                              alt="Web Development" 
                              class="rounded-2xl shadow-xl">
                         <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
                             <div class="flex items-center space-x-4">
-                                <div class="text-3xl font-bold gradient-text">95%</div>
+                                <div class="text-3xl font-bold gradient-text">90%</div>
                                 <div>
-                                    <p class="font-semibold">Client Satisfaction</p>
-                                    <p class="text-sm text-gray-600">In web development projects</p>
+                                    <p class="font-semibold">{{ $t('Service.client') }}</p>
+                                    <p class="text-sm text-gray-600">{{ $t('Service.client_desc') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +47,7 @@
                 </div>
             </div>
             
-            <!-- Service 2: Mobile App Development -->
+            <!-- Service 2 -->
             <div class="mb-20">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1">
@@ -89,9 +57,6 @@
                     </div>
                     
                     <div class="order-1 lg:order-2">
-                        <div class="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full text-sm font-semibold mb-4">
-                            Mobile
-                        </div>
                         <h2 class="text-4xl font-bold mb-6">Mobile App Development</h2>
                         <p class="text-gray-600 mb-6">
                             Create powerful mobile experiences that engage users and drive business growth. We develop native and cross-platform apps that perform flawlessly.
@@ -116,125 +81,9 @@
                             </div>
                         </div>
                         
-                        <button class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
-                            View Mobile Portfolio
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Service 3: UI/UX Design -->
-            <div class="mb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="inline-block px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm font-semibold mb-4">
-                            Design
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">UI/UX Design</h2>
-                        <p class="text-gray-600 mb-6">
-                            We craft intuitive and beautiful interfaces that delight users and achieve business objectives. Our design process is user-centered and data-driven.
-                        </p>
-                        
-                        <div class="space-y-6 mb-8">
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">User Research & Strategy</h4>
-                                    <p class="text-gray-600 text-sm">Understanding your users to create meaningful experiences</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Wireframing & Prototyping</h4>
-                                    <p class="text-gray-600 text-sm">Rapid iteration to find the perfect solution</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mr-4">
-                                    <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold">Visual Design & Branding</h4>
-                                    <p class="text-gray-600 text-sm">Creating cohesive and memorable brand experiences</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" 
-                             alt="UI/UX Design" 
-                             class="rounded-2xl shadow-xl">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Service 4: Digital Marketing -->
-            <div class="mb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" 
-                             alt="Digital Marketing" 
-                             class="rounded-2xl shadow-xl">
-                    </div>
-                    
-                    <div class="order-1 lg:order-2">
-                        <div class="inline-block px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-4">
-                            Marketing
-                        </div>
-                        <h2 class="text-4xl font-bold mb-6">Digital Marketing</h2>
-                        <p class="text-gray-600 mb-6">
-                            Drive growth with data-driven digital marketing strategies that deliver measurable results and maximize ROI.
-                        </p>
-                        
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Search Engine Optimization (SEO)</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Pay-Per-Click Advertising (PPC)</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Social Media Marketing</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Content Marketing & Strategy</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Email Marketing Automation</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span class="text-gray-700">Analytics & Reporting</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <button class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
-                                Get Marketing Audit
-                            </button>
-                            <button class="px-6 py-3 border-2 border-green-600 text-green-600 rounded-lg hover:bg-green-50 transition">
-                                View Case Studies
-                            </button>
-                        </div>
+                        <RouterLink to="/portfolio" class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition">
+                            View Portfolio
+                        </RouterLink>
                     </div>
                 </div>
             </div>
@@ -380,3 +229,26 @@
     <MyFooter />
   </div>
 </template>
+<script setup>
+import { computed } from "vue"
+import { useI18n } from "vue-i18n"
+const { t } = useI18n()
+const service1SubList = computed(() => [
+  {
+    title: t("Service.service1_sub1"),
+    desc: t("Service.service1_desc_sub1"),
+  },
+  {
+    title: t("Service.service1_sub2"),
+    desc: t("Service.service1_desc_sub2"),
+  },
+  {
+    title: t("Service.service1_sub3"),
+    desc: t("Service.service1_desc_sub3"),
+  },
+  {
+    title: t("Service.service1_sub4"),
+    desc: t("Service.service1_desc_sub4"),
+  },
+])
+</script>

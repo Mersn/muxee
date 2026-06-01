@@ -29,7 +29,7 @@
                 <p class="text-gray-600">{{ $t("Home.project") }}</p>
               </div>
               <div class="bg-indigo-50 p-6 rounded-lg">
-                <h3 class="text-3xl font-bold text-indigo-600 mb-2">20+</h3>
+                <h3 class="text-3xl font-bold text-indigo-600 mb-2">10+</h3>
                 <p class="text-gray-600">{{ $t("Home.years") }}</p>
               </div>
             </div>
