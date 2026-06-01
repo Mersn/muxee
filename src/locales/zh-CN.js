@@ -21,7 +21,7 @@ export default {
     services5_desc: "全球风味调料配方，柔性贴牌服务",
     contactInfo:"联系方式",
     addrDetail:"园山街道荷坳社区金源一路12号E栋厂房103",
-    addr:"广州市深圳市龙岗区",
+    addr:"广东省深圳市龙岗区",
     phone:"电话：",
     email: "邮箱：",
     right: "2026 木析.保留所有权利.",

@@ -21,7 +21,7 @@ export default {
     services5_desc: "Global flavor seasoning formulas, flexible OEM services",
     contactInfo: "Contact Info",
     addrDetail: "103, Factory Building, Building E, No. 12 Jinyuan 1st Road, Heao Community, Yuanshan Street",
-    addr: "Longgang District, Shenzhen, Guangzhou, China",
+    addr: "Longgang District, Shenzhen City, Guangdong Province, China",
     phone: "Phone: ",
     email: "Email: ",
     right: "2026 Muxee. All rights reserved.",
