@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
-        run: npm run build
+        run: npm run build:cf
       - name: 复制index重命名为404-解决刷新404的问题
         run: cp ./dist/index.html ./dist/404.html
       - name: 查看dist文件夹
