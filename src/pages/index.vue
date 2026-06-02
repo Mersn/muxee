@@ -272,7 +272,7 @@
             <img
               :src="item.url"
               :alt="item.label"
-              class="w-full h-64 object-cover group-hover:scale-110 transition duration-500"
+              class="w-full h-100 lg:h-64 object-cover group-hover:scale-110 transition duration-500"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
