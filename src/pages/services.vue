@@ -92,7 +92,7 @@
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div
-                  v-for="item in service1SubList"
+                  v-for="item in service2SubList"
                   :key="item.title"
                   class="bg-gray-50 p-4 rounded-lg"
                 >
@@ -114,7 +114,7 @@
     </section>
 
     <!-- Process Section -->
-    <section class="py-20">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4">{{ $t("Service.process") }}</h2>

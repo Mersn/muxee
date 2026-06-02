@@ -55,7 +55,7 @@
     </section>
 
     <!-- Values Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4">{{ $t("About.core_values") }}</h2>
