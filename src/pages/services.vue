@@ -50,7 +50,7 @@
 
             <div class="relative animate-slideInRight">
               <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600"
+                src="@/assets/images/services1.png?w=600"
                 alt="Web Development"
                 class="rounded-2xl shadow-xl"
               />
@@ -76,7 +76,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="order-2 lg:order-1">
               <img
-                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600"
+                src="@/assets/images/services2.png?w=600"
                 alt="Mobile Development"
                 class="rounded-2xl shadow-xl"
               />

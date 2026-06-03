@@ -7,7 +7,7 @@
       <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-purple-900/90 to-indigo-900/90 z-10"></div>
         <img
-          src="@/assets/images/home/hero_bg.jpg?w=1920"
+          src="@/assets/images/hero_bg.jpg?w=1920"
           alt="Hero Background"
           class="w-full h-full object-cover animate-zoomIn"
         />
@@ -303,37 +303,47 @@
 <script setup>
 import { computed } from "vue"
 import { useI18n } from "vue-i18n"
-import project_1 from "@/assets/images/home/projects_1.png"
-import project_2 from "@/assets/images/home/projects_2.png"
-import project_3 from "@/assets/images/home/projects_3.png"
-import product_1 from "@/assets/images/home/product_1.png"
-import product_2 from "@/assets/images/home/product_2.png"
-import product_3 from "@/assets/images/home/product_3.png"
-import product_4 from "@/assets/images/home/product_4.png"
-import product_5 from "@/assets/images/home/product_5.png"
-import product_6 from "@/assets/images/home/product_6.png"
+import project_1 from "@/assets/images/portfolio/projects_1.png"
+import project_2 from "@/assets/images/portfolio/projects_2.png"
+import project_3 from "@/assets/images/portfolio/projects_3.png"
+import product_1 from "@/assets/images/portfolio/product_1.png"
+import product_2 from "@/assets/images/portfolio/product_2.png"
+import product_3 from "@/assets/images/portfolio/product_3.png"
+import product_4 from "@/assets/images/portfolio/product_4.png"
+import product_5 from "@/assets/images/portfolio/product_5.png"
+import product_6 from "@/assets/images/portfolio/product_6.png"
 const { t } = useI18n()
 // 引入图片
-// const modules = import.meta.glob("../assets/images/home/*", { as: 'url', eager: true})
+// const imageModules = import.meta.glob("../assets/images/portfolio/*", { as: 'url', eager: true})
 // function getImageUrl(name) {
-//   const path =`../assets/images/home/${name}`
-//   return modules[path]
+//   const path =`../assets/images/portfolio/${name}`
+//   return imageModules[path]
 //   // console.log('--getImageUrl--', import.meta.url)
-//   // let newUrl =  new URL(`../assets/images/home/project_1.png`, import.meta.url)
+//   // let newUrl =  new URL(`../assets/images/portfolio/project_1.png`, import.meta.url)
 //   // console.log('--getImageUrl--', newUrl)
 //   // return newUrl.href
 // }
+// const imageModules = import.meta.glob("../assets/images/portfolio/*", { eager: true})
+// function getImageUrl(name) {
+//   console.log('--getImageUrl-imageModules-', imageModules)
+//   const path =`../assets/images/portfolio/${name}`
+//   console.log('--getImageUrl-path-', path)
+//   let img =  imageModules[path]
+//   console.log('--getImageUrl--', img)
+//   return img
+// }
+// getImageUrl('project_1.png')
 const projectList = computed(() => [
-  { label: t("Home.project1"), desc: t("Home.project1_desc"), url: project_1 },
-  { label: t("Home.project2"), desc: t("Home.project2_desc"), url: project_2 },
-  { label: t("Home.project3"), desc: t("Home.project3_desc"), url: project_3 },
+  { label: t("Portfolio.project1"), desc: t("Portfolio.project1_desc"), url: project_1 },
+  { label: t("Portfolio.project2"), desc: t("Portfolio.project2_desc"), url: project_2 },
+  { label: t("Portfolio.project3"), desc: t("Portfolio.project3_desc"), url: project_3 },
 ])
 const productList = computed(() => [
-  { label: t("Home.product1"), desc: t("Home.product1_desc"), url: product_1 },
-  { label: t("Home.product2"), desc: t("Home.product2_desc"), url: product_2 },
-  { label: t("Home.product3"), desc: t("Home.product3_desc"), url: product_3 },
-  { label: t("Home.product4"), desc: t("Home.product4_desc"), url: product_4 },
-  { label: t("Home.product5"), desc: t("Home.product5_desc"), url: product_5 },
-  { label: t("Home.product6"), desc: t("Home.product6_desc"), url: product_6 },
+  { label: t("Portfolio.product1"), desc: t("Portfolio.product1_desc"), url: product_1 },
+  { label: t("Portfolio.product2"), desc: t("Portfolio.product2_desc"), url: product_2 },
+  { label: t("Portfolio.product3"), desc: t("Portfolio.product3_desc"), url: product_3 },
+  { label: t("Portfolio.product4"), desc: t("Portfolio.product4_desc"), url: product_4 },
+  { label: t("Portfolio.product5"), desc: t("Portfolio.product5_desc"), url: product_5 },
+  { label: t("Portfolio.product6"), desc: t("Portfolio.product6_desc"), url: product_6 },
 ])
 </script>
