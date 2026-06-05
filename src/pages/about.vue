@@ -13,23 +13,29 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="animate-fadeInLeft">
             <h2 class="text-4xl font-bold mb-6">{{ $t("About.intro") }}</h2>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-600 mb-3">
               {{ $t("About.intro_content1") }}
             </p>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-600 mb-3">
               {{ $t("About.intro_content2") }}
             </p>
-            <p class="text-gray-600 mb-6">
+            <p class="text-gray-600 mb-3">
               {{ $t("About.intro_content3") }}
+            </p>
+            <p class="text-gray-600 mb-3">
+              {{ $t("About.intro_content4") }}
+            </p>
+            <p class="text-gray-600 mb-3">
+              {{ $t("About.intro_content5") }}
             </p>
 
             <div class="grid grid-cols-2 gap-6">
               <div class="bg-purple-50 p-6 rounded-lg">
-                <h3 class="text-3xl font-bold text-purple-600 mb-2">100+</h3>
+                <h3 class="text-3xl font-bold text-primary mb-2">100+</h3>
                 <p class="text-gray-600">{{ $t("Home.project") }}</p>
               </div>
               <div class="bg-indigo-50 p-6 rounded-lg">
-                <h3 class="text-3xl font-bold text-indigo-600 mb-2">10+</h3>
+                <h3 class="text-3xl font-bold text-primary mb-2">20+</h3>
                 <p class="text-gray-600">{{ $t("Home.years") }}</p>
               </div>
             </div>
@@ -67,7 +73,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center">
             <div
-              class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -91,7 +97,7 @@
 
           <div class="text-center">
             <div
-              class="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -115,7 +121,7 @@
 
           <div class="text-center">
             <div
-              class="w-20 h-20 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -139,7 +145,7 @@
 
           <div class="text-center">
             <div
-              class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4"
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-4"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -185,7 +191,7 @@
               />
             </div>
             <h3 class="text-xl font-bold mb-1">{{ item.name }}</h3>
-            <p class="text-purple-600 mb-2">{{ item.position }}</p>
+            <p class="text-primary mb-2">{{ item.position }}</p>
             <p class="text-gray-600 text-sm">{{ item.desc }}</p>
           </div>
         </div>
@@ -205,6 +211,7 @@ import team_3 from "@/assets/images/about/team_3.png"
 import team_4 from "@/assets/images/about/team_4.png"
 import team_5 from "@/assets/images/about/team_5.png"
 import team_6 from "@/assets/images/about/team_6.png"
+import team_7 from "@/assets/images/about/team_7.png"
 const { t } = useI18n()
 const teamList = computed(() => [
   {
@@ -230,6 +237,24 @@ const teamList = computed(() => [
     position: t("About.team4_position"),
     desc: t("About.team4_desc"),
     url: team_4,
+  },
+  {
+    name: t("About.team5"),
+    position: t("About.team5_position"),
+    desc: t("About.team5_desc"),
+    url: team_5,
+  },
+  {
+    name: t("About.team6"),
+    position: t("About.team6_position"),
+    desc: t("About.team6_desc"),
+    url: team_6,
+  },
+  {
+    name: t("About.team7"),
+    position: t("About.team7_position"),
+    desc: t("About.team7_desc"),
+    url: team_7,
   },
 ])
 </script>

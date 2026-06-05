@@ -1,5 +1,9 @@
 @import url("main.css");
-@import url("animations.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+}

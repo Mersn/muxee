@@ -28,7 +28,7 @@
               >
                 <div class="flex items-start">
                   <svg
-                    class="w-6 h-6 text-green-500 mr-3 mt-1"
+                    class="w-6 h-6 text-primary mr-3 mt-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -103,7 +103,7 @@
 
               <RouterLink
                 to="/portfolio"
-                class="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition"
+                class="px-6 py-3 gradient-bg text-white rounded-lg hover:shadow-lg transition"
               >
                 {{ $t("Service.btn") }}
               </RouterLink>
@@ -126,7 +126,7 @@
             <!-- Step 1 -->
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                class="w-16 h-16 gradient-bg text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
               >
                 1
               </div>
@@ -141,7 +141,7 @@
             <!-- Step 2 -->
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                class="w-16 h-16 gradient-bg text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
               >
                 2
               </div>
@@ -156,7 +156,7 @@
             <!-- Step 3 -->
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                class="w-16 h-16 gradient-bg text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
               >
                 3
               </div>
@@ -171,7 +171,7 @@
             <!-- Step 4 -->
             <div class="text-center">
               <div
-                class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
+                class="w-16 h-16 gradient-bg text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4"
               >
                 4
               </div>
