@@ -192,7 +192,7 @@
             </div>
             <h3 class="text-xl font-bold mb-1">{{ item.name }}</h3>
             <p class="text-primary mb-2">{{ item.position }}</p>
-            <p class="text-gray-600 text-sm">{{ item.desc }}</p>
+            <p class="text-gray-600 text-left">{{ item.desc }}</p>
           </div>
         </div>
       </div>

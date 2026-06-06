@@ -90,7 +90,7 @@
                 {{ $t("Service.service2_desc") }}
               </p>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
                 <div
                   v-for="item in service2SubList"
                   :key="item.title"

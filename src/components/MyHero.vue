@@ -1,6 +1,6 @@
 <template>
   <!-- Hero Section -->
-  <section class="py-20 bg-gradient-to-br from-purple-50 to-indigo-50">
+  <section class="py-20 pt-40 bg-gradient-to-br from-purple-50 to-indigo-50">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center animate-fadeInUp">
         <h1 class="text-5xl lg:text-6xl font-bold mb-6">

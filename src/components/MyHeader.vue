@@ -1,6 +1,6 @@
 <template>
   <!-- Navigation -->
-  <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+  <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="flex justify-between items-center h-16 lg:h-20">
         <div class="flex items-center">

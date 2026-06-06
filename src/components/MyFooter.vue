@@ -2,10 +2,20 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-12 text-center lg:text-left">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         <div>
           <h3 class="text-2xl font-bold mb-4 gradient-text">MUXEE</h3>
           <p class="text-gray-400">{{ $t('Footer.desc') }}</p>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">{{ $t('Footer.contactInfo') }}</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>{{ $t('Footer.addrDetail') }}</li>
+            <li>{{ $t('Footer.addr') }}</li>
+            <li>{{ $t('Footer.phone') }}{{ $t('Contact.title_cell2_desc') }}</li>
+            <li>{{ $t('Footer.email') }}{{ $t('Contact.title_cell1_desc') }}</li>
+          </ul>
         </div>
 
         <div>
@@ -22,22 +32,13 @@
           </ul>
         </div>
 
-        <div>
+        <!-- <div>
           <h4 class="text-lg font-semibold mb-4">{{ $t('Header.services') }}</h4>
           <ul class="space-y-2 text-gray-400">
             <li v-for="item in servicesList" :key="item.label" >{{item.label}}</li>
           </ul>
-        </div>
+        </div> -->
 
-        <div>
-          <h4 class="text-lg font-semibold mb-4">{{ $t('Footer.contactInfo') }}</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li>{{ $t('Footer.addrDetail') }}</li>
-            <li>{{ $t('Footer.addr') }}</li>
-            <li>{{ $t('Footer.phone') }}{{ $t('Contact.title_cell2_desc') }}</li>
-            <li>{{ $t('Footer.email') }}{{ $t('Contact.title_cell1_desc') }}</li>
-          </ul>
-        </div>
       </div>
 
       <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
