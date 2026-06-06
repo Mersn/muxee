@@ -66,7 +66,7 @@
           <div class="masonry">
             <div
                 v-for="item in productList"
-                :key="item.label" class="masonry-item group cursor-pointer">
+                :key="item.label" class="masonry-item group cursor-pointer card-hover">
               <div class="relative overflow-hidden rounded-lg">
                 <img
                   :src="item.url"
@@ -74,7 +74,7 @@
                   class="w-full hover-img"
                 />
                 <div
-                  class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
                 >
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{{ item.label }}</h3>
@@ -100,6 +100,10 @@ import project_2 from "@/assets/images/portfolio/projects_2.png"
 import project_3 from "@/assets/images/portfolio/projects_3.png"
 import project_4 from "@/assets/images/portfolio/projects_4.png"
 import project_5 from "@/assets/images/portfolio/projects_5.png"
+import project_6 from "@/assets/images/portfolio/projects_6.png"
+import project_7 from "@/assets/images/portfolio/projects_7.png"
+import project_8 from "@/assets/images/portfolio/projects_8.png"
+import project_9 from "@/assets/images/portfolio/projects_9.png"
 import product_1 from "@/assets/images/portfolio/product_1.png"
 import product_2 from "@/assets/images/portfolio/product_2.png"
 import product_3 from "@/assets/images/portfolio/product_3.png"
@@ -120,6 +124,26 @@ const projectList = computed(() => [
     label: t("Portfolio.project1"),
     desc: t("Portfolio.project1_desc"),
     url: project_1,
+  },
+  {
+    label: t("Portfolio.project6"),
+    desc: t("Portfolio.project6_desc"),
+    url: project_6,
+  },
+  {
+    label: t("Portfolio.project7"),
+    desc: t("Portfolio.project7_desc"),
+    url: project_7,
+  },
+  {
+    label: t("Portfolio.project8"),
+    desc: t("Portfolio.project8_desc"),
+    url: project_8,
+  },
+  {
+    label: t("Portfolio.project9"),
+    desc: t("Portfolio.project9_desc"),
+    url: project_9,
   },
   {
     label: t("Portfolio.project2"),
