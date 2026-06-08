@@ -103,7 +103,7 @@
 
               <RouterLink
                 to="/portfolio"
-                class="px-6 py-3 gradient-bg text-white rounded-lg hover:shadow-lg transition"
+                class="px-6 py-3 btn-primary btn-primary:hover text-white rounded-lg"
               >
                 {{ $t("Service.btn") }}
               </RouterLink>
