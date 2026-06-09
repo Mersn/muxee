@@ -155,6 +155,10 @@ export default {
     project8_desc: "Customize operational mechanisms to stimulate the enthusiasm of grassroots employees",
     project9: "Today Corporate Culture Construction",
     project9_desc: "Involve employees in business planning, create together, and witness together",
+    project10: "project2",
+    project10_desc: "Find a high-growth business base and build a super business.",
+    project11: "project2",
+    project11_desc: "Emphasize strengths and avoid weaknesses, and focus on brand differentiation positioning.",
     product1: "I-Chai",
     product1_desc: "Store Materials",
     product2: "MOLL TEA",
@@ -198,5 +202,8 @@ export default {
     title_cell3_desc: "",
     title_cell4: "Business Hours",
     title_cell4_desc: "Monday - Friday",
+  },
+  Btn: {
+    close: "Close",
   },
 }

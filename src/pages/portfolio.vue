@@ -22,6 +22,7 @@
             v-for="item in projectList"
             :key="item.label"
             class="portfolio-item animate-scaleIn"
+            @click="handleCell(item)"
           >
             <div
               class="bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer group"
@@ -61,8 +62,7 @@
             {{ $t("Service.service2_desc") }}
           </p>
         </div>
-        <div class="mx-auto px-6">
-          <!-- Portfolio Grid -->
+        <!-- <div class="mx-auto px-6">
           <div class="masonry">
             <div
                 v-for="item in productList"
@@ -84,16 +84,89 @@
               </div>
             </div>
           </div>
+        </div> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="item in productList"
+            :key="item.label"
+            class="portfolio-item animate-scaleIn"
+            @click="handleCell(item)"
+          >
+            <div
+              class="bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+            >
+              <div class="relative overflow-hidden h-64">
+                <img
+                  :src="item.url"
+                  alt="Portfolio"
+                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
+                <div
+                  class="absolute inset-0 portfolio-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                >
+                  <div class="text-white">
+                    <span class="text-sm font-medium gradient-text font-bold">{{
+                      $t("Service.service2")
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3>
+                <p class="text-gray-600 mb-4">{{ item.desc }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <StartProject />
     <MyFooter />
+
+    <div v-if="isShowModel" class="flex fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-7xl w-full mx-4 overflow-hidden">
+            <h3 class="text-2xl font-bold mb-4">{{ modelData.label }}</h3>
+            <div class="h-96 overflow-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2">
+              <div
+                v-for="item in modelData.children"
+                :key="item.label"
+                class="portfolio-item animate-scaleIn"
+                @click="handleCell(item)"
+              >
+                <div
+                  class="bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+                >
+                  <div class="relative overflow-hidden h-64">
+                    <img
+                      :src="item.url"
+                      alt="Portfolio"
+                      class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    />
+                    <div
+                      class="absolute inset-0 portfolio-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6"
+                    >
+                      <div class="text-white">
+                        <span class="text-sm font-medium gradient-text font-bold">{{ item.label }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <!-- <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3> -->
+                    <p class="text-gray-600 mb-4">{{ item.desc }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center space-x-4 mt-3">
+                <button @click="isShowModel = false" class="px-4 py-2 btn-outline btn-outline:hover rounded">{{ $t('Btn.close') }}</button>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 <script setup>
-import { computed } from "vue"
+import { ref, computed } from "vue"
 import { useI18n } from "vue-i18n"
 import project_1 from "@/assets/images/portfolio/projects_1.png"
 import project_2 from "@/assets/images/portfolio/projects_2.png"
@@ -104,6 +177,8 @@ import project_6 from "@/assets/images/portfolio/projects_6.png"
 import project_7 from "@/assets/images/portfolio/projects_7.png"
 import project_8 from "@/assets/images/portfolio/projects_8.png"
 import project_9 from "@/assets/images/portfolio/projects_9.png"
+import project_10 from "@/assets/images/portfolio/projects_10.png"
+import project_11 from "@/assets/images/portfolio/projects_11.png"
 import product_1 from "@/assets/images/portfolio/product_1.png"
 import product_2 from "@/assets/images/portfolio/product_2.png"
 import product_3 from "@/assets/images/portfolio/product_3.png"
@@ -119,51 +194,77 @@ import product_12 from "@/assets/images/portfolio/product_12.png"
 import product_13 from "@/assets/images/portfolio/product_13.png"
 import product_14 from "@/assets/images/portfolio/product_14.png"
 const { t } = useI18n()
+let isShowModel = ref(false)
+let modelData = ref({})
+function handleCell (row) {
+  console.log('--handleCell--', row)
+  if (row.children.length) {
+    isShowModel.value = true
+    modelData.value = row
+  }
+}
 const projectList = computed(() => [
   {
     label: t("Portfolio.project1"),
     desc: t("Portfolio.project1_desc"),
     url: project_1,
-  },
-  {
-    label: t("Portfolio.project6"),
-    desc: t("Portfolio.project6_desc"),
-    url: project_6,
-  },
-  {
-    label: t("Portfolio.project7"),
-    desc: t("Portfolio.project7_desc"),
-    url: project_7,
-  },
-  {
-    label: t("Portfolio.project8"),
-    desc: t("Portfolio.project8_desc"),
-    url: project_8,
-  },
-  {
-    label: t("Portfolio.project9"),
-    desc: t("Portfolio.project9_desc"),
-    url: project_9,
+    children: [
+      {
+        label: t("Portfolio.project6"),
+        desc: t("Portfolio.project6_desc"),
+        url: project_6,
+      },
+      {
+        label: t("Portfolio.project7"),
+        desc: t("Portfolio.project7_desc"),
+        url: project_7,
+      },
+      {
+        label: t("Portfolio.project8"),
+        desc: t("Portfolio.project8_desc"),
+        url: project_8,
+      },
+      {
+        label: t("Portfolio.project9"),
+        desc: t("Portfolio.project9_desc"),
+        url: project_9,
+      }
+    ]
   },
   {
     label: t("Portfolio.project2"),
     desc: t("Portfolio.project2_desc"),
     url: project_2,
+    children: [
+      {
+        label: t("Portfolio.project2"),
+        desc: t("Portfolio.project10_desc"),
+        url: project_10,
+      },
+      {
+        label: t("Portfolio.project2"),
+        desc: t("Portfolio.project11_desc"),
+        url: project_11,
+      },
+    ]
   },
   {
     label: t("Portfolio.project3"),
     desc: t("Portfolio.project3_desc"),
     url: project_3,
+    children: []
   },
   {
     label: t("Portfolio.project4"),
     desc: t("Portfolio.project4_desc"),
     url: project_4,
+    children: []
   },
   {
     label: t("Portfolio.project5"),
     desc: t("Portfolio.project5_desc"),
     url: project_5,
+    children: []
   },
 ])
 const productList = computed(() => [
@@ -171,71 +272,77 @@ const productList = computed(() => [
     label: t("Portfolio.product1"),
     desc: t("Portfolio.product1_desc"),
     url: product_1,
+    children: [
+      {
+        label: t("Portfolio.product7"),
+        desc: t("Portfolio.product7_desc"),
+        url: product_7,
+      },
+    ]
   },
   {
     label: t("Portfolio.product2"),
     desc: t("Portfolio.product2_desc"),
     url: product_2,
-  },
-  {
-    label: t("Portfolio.product3"),
-    desc: t("Portfolio.product3_desc"),
-    url: product_3,
-  },
-  {
-    label: t("Portfolio.product4"),
-    desc: t("Portfolio.product4_desc"),
-    url: product_4,
-  },
-  {
-    label: t("Portfolio.product5"),
-    desc: t("Portfolio.product5_desc"),
-    url: product_5,
-  },
-  {
-    label: t("Portfolio.product6"),
-    desc: t("Portfolio.product6_desc"),
-    url: product_6,
-  },
-  {
-    label: t("Portfolio.product7"),
-    desc: t("Portfolio.product7_desc"),
-    url: product_7,
-  },
-  {
-    label: t("Portfolio.product8"),
-    desc: t("Portfolio.product8_desc"),
-    url: product_8,
-  },
-  {
-    label: t("Portfolio.product9"),
-    desc: t("Portfolio.product9_desc"),
-    url: product_9,
-  },
-  {
-    label: t("Portfolio.product10"),
-    desc: t("Portfolio.product10_desc"),
-    url: product_10,
+    children: [
+      {
+        label: t("Portfolio.product3"),
+        desc: t("Portfolio.product3_desc"),
+        url: product_3,
+      },
+      {
+        label: t("Portfolio.product4"),
+        desc: t("Portfolio.product4_desc"),
+        url: product_4,
+      },
+      {
+        label: t("Portfolio.product8"),
+        desc: t("Portfolio.product8_desc"),
+        url: product_8,
+      },
+      {
+        label: t("Portfolio.product9"),
+        desc: t("Portfolio.product9_desc"),
+        url: product_9,
+      },
+      {
+        label: t("Portfolio.product14"),
+        desc: t("Portfolio.product14_desc"),
+        url: product_14,
+      },
+      {
+        label: t("Portfolio.product10"),
+        desc: t("Portfolio.product10_desc"),
+        url: product_10,
+      },
+      {
+        label: t("Portfolio.product5"),
+        desc: t("Portfolio.product5_desc"),
+        url: product_5,
+      },
+      {
+        label: t("Portfolio.product6"),
+        desc: t("Portfolio.product6_desc"),
+        url: product_6,
+      },
+    ]
   },
   {
     label: t("Portfolio.product11"),
     desc: t("Portfolio.product11_desc"),
     url: product_11,
-  },
-  {
-    label: t("Portfolio.product12"),
-    desc: t("Portfolio.product12_desc"),
-    url: product_12,
-  },
-  {
-    label: t("Portfolio.product13"),
-    desc: t("Portfolio.product13_desc"),
-    url: product_13,
-  },
-  {
-    label: t("Portfolio.product14"),
-    desc: t("Portfolio.product14_desc"),
-    url: product_14,
+    children: [
+      {
+        label: t("Portfolio.product12"),
+        desc: t("Portfolio.product12_desc"),
+        url: product_12,
+      },
+      {
+        label: t("Portfolio.product13"),
+        desc: t("Portfolio.product13_desc"),
+        url: product_13,
+      },
+    ]
   },
 ])
 </script>
