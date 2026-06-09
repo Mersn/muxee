@@ -155,6 +155,10 @@ export default {
     project8_desc: "定制运营机制，激发基层员工积极性",
     project9: "Today 企业文化建设",
     project9_desc: "让员工参与企业经营规划，共同创造，共同看见",
+    project10: "project2",
+    project10_desc: "找到高增长业务基点，打造超级生意。",
+    project11: "project2",
+    project11_desc: "扬长避短，锁定品牌差异化定位。",
     product1: "I-Chai",
     product1_desc: "门店物料",
     product2: "MOLL TEA",
@@ -198,5 +202,8 @@ export default {
     title_cell3_desc: "",
     title_cell4: "工作时间",
     title_cell4_desc: "星期一 - 星期五",
+  },
+  Btn: {
+    close: "关闭",
   },
 }

@@ -201,7 +201,7 @@
             {{$t("Home.product_desc")}}
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           <div
             v-for="item in productList" :key="item.label"
             class="group relative overflow-hidden rounded-2xl shadow-lg card-hover"
@@ -218,6 +218,22 @@
                 <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3>
                 <p class="text-sm">{{ item.desc }}</p>
               </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+          v-for="item in productList" :key="item.label"
+            class="bg-white rounded-lg shadow-lg overflow-hidden card-hover"
+          >
+            <img 
+              :src="item.url"
+              :alt="item.label"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">{{ item.label }}</h3>
+                <p class="text-gray-600 mb-4">{{ item.desc }}</p>
             </div>
           </div>
         </div>
@@ -245,10 +261,7 @@ import project_2 from "@/assets/images/portfolio/projects_2.png"
 import project_3 from "@/assets/images/portfolio/projects_3.png"
 import product_1 from "@/assets/images/portfolio/product_1.png"
 import product_2 from "@/assets/images/portfolio/product_2.png"
-import product_3 from "@/assets/images/portfolio/product_3.png"
-import product_4 from "@/assets/images/portfolio/product_4.png"
-import product_5 from "@/assets/images/portfolio/product_5.png"
-import product_6 from "@/assets/images/portfolio/product_6.png"
+import product_11 from "@/assets/images/portfolio/product_11.png"
 const { t } = useI18n()
 // 引入图片
 // const imageModules = import.meta.glob("../assets/images/portfolio/*", { as: 'url', eager: true})
@@ -278,9 +291,6 @@ const projectList = computed(() => [
 const productList = computed(() => [
   { label: t("Portfolio.product1"), desc: t("Portfolio.product1_desc"), url: product_1 },
   { label: t("Portfolio.product2"), desc: t("Portfolio.product2_desc"), url: product_2 },
-  { label: t("Portfolio.product3"), desc: t("Portfolio.product3_desc"), url: product_3 },
-  { label: t("Portfolio.product4"), desc: t("Portfolio.product4_desc"), url: product_4 },
-  { label: t("Portfolio.product5"), desc: t("Portfolio.product5_desc"), url: product_5 },
-  { label: t("Portfolio.product6"), desc: t("Portfolio.product6_desc"), url: product_6 },
+  { label: t("Portfolio.product11"), desc: t("Portfolio.product11_desc"), url: product_11 },
 ])
 </script>
