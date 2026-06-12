@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
-import zh from '@/locales/zh-CN'; // 导入中文语言包
-import en from '@/locales/en'; // 导入英文语言包
+import zh from '@/locales/zh-CN.json'; // 导入中文语言包
+import en from '@/locales/en.json'; // 导入英文语言包
 /*
  * All i18n resources specified in the plugin `include` option can be loaded at once using the import syntax
  */
