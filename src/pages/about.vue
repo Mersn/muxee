@@ -28,6 +28,9 @@
             <p class="text-gray-600 mb-3">
               {{ $t("About.intro_content5") }}
             </p>
+            <p class="text-gray-600 mb-3">
+              {{ $t("About.intro_content6") }}
+            </p>
 
             <div class="grid grid-cols-2 gap-6">
               <div class="bg-purple-50 p-6 rounded-lg">
