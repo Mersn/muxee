@@ -125,7 +125,7 @@
     <MyFooter />
 
     <div v-if="isShowModel" class="flex fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
-        <div class="bg-white rounded-lg p-8 max-w-7xl w-full mx-4 overflow-hidden">
+        <div class="bg-white rounded-lg p-8 max-w-7xl w-full mx-4 overflow-hidden overscroll-contain">
             <h3 class="text-2xl font-bold mb-4">{{ modelData.label }}</h3>
             <div class="h-96 overflow-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2">
               <div
